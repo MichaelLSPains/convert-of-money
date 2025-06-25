@@ -7,7 +7,7 @@ function convertValues(){
 
      const convertedValue = inputCurrencyValue / dolarToday
 
-     console.log(convertedValue)
+  
 }
 
 convertButton.addEventListener("click", convertValues)
