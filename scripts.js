@@ -1,13 +1,38 @@
 const convertButton = document.querySelector(".convert-button")
 const worldCurrencies = document.querySelector(".world-currencies")
+const countryConvert = document.querySelector(".country-convert")
+
+function changeCountry(){
+     const coinName = document.getElementById("coin-name")
+     const countryImge = document.querySelector(".country-img")
+
+     if(countryConvert.value == "BRL" ){
+          coinName.innerHTML = "Real"
+          countryImge.src = "./assets/brasil 2.png"   
+     }
+     
+     if(countryConvert.value == "ARS" ){
+          coinName.innerHTML = "Peso Argentino"
+          countryImge.src = "./assets/peso-argentino.png"             
+     }
+     
+     if(countryConvert.value == "JPY" ){
+          coinName.innerHTML = "Iene"
+          countryImge.src = "./assets/iene e yuan.png"             
+     }
+
+     if(countryConvert.value == "CHF" ){
+          coinName.innerHTML = "Franco Suiço"
+          countryImge.src = "./assets/francosuiço.jpg"            
+     }
+}
+
 
 function convertValues(){
      const inputCurrencyValue = document.querySelector(".input-currency").value
      
      const currencyValueToConvert = document.querySelector(".currency-value-to-convert")
      const currencyValueCoverted = document.querySelector(".currency-value")
-
-     console.log(worldCurrencies.value)
 
      const dolarToday = 5.56
      const euroToday = 6.46
@@ -34,6 +59,11 @@ function convertValues(){
      if(worldCurrencies.value == "bitcoin"){
      currencyValueCoverted.innerHTML = new Intl.NumberFormat("en-US", { 
           style: "currency", currency: "BTC" }).format(inputCurrencyValue / bitcoinToday)
+          
+          if(worldCurrencies.value == "Iene") {
+          currencyValueCoverted.innerHTML = new Intl.NumberFormat("ja-JP",{
+          style: "currency", currency: "JPY"}).format(inputCurrencyValue / ieneToday)
+     }
      }
      
      currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR",{
@@ -68,8 +98,7 @@ function convertValues(){
           }
 
           convertValues()
-          
      }
-
+countryConvert.addEventListener("change", changeCountry)
 worldCurrencies.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
