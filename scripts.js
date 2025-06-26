@@ -59,11 +59,6 @@ function convertValues(){
      if(worldCurrencies.value == "bitcoin"){
      currencyValueCoverted.innerHTML = new Intl.NumberFormat("en-US", { 
           style: "currency", currency: "BTC" }).format(inputCurrencyValue / bitcoinToday)
-          
-          if(worldCurrencies.value == "Iene") {
-          currencyValueCoverted.innerHTML = new Intl.NumberFormat("ja-JP",{
-          style: "currency", currency: "JPY"}).format(inputCurrencyValue / ieneToday)
-     }
      }
      
      currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR",{
