@@ -5,25 +5,31 @@ const countryConvert = document.querySelector(".country-convert")
 function changeCountry(){
      const coinName = document.getElementById("coin-name")
      const countryImge = document.querySelector(".country-img")
+     var unidadeSelecionada = document.getElementById("unidade")
 
-     if(countryConvert.value == "BRL" ){
+     if(countryConvert.value == "Real" ){
           coinName.innerHTML = "Real"
-          countryImge.src = "./assets/brasil 2.png"   
+          countryImge.src = "./assets/brasil 2.png" 
+          unidadeSelecionada.innerHTML = "R$"  
      }
      
-     if(countryConvert.value == "ARS" ){
+     if(countryConvert.value == "Peso" ){
           coinName.innerHTML = "Peso Argentino"
-          countryImge.src = "./assets/peso-argentino.png"             
+          countryImge.src = "./assets/peso-argentino.png"
+          unidadeSelecionada.innerHTML = "$"              
      }
      
-     if(countryConvert.value == "JPY" ){
+     if(countryConvert.value == "Iene" ){
           coinName.innerHTML = "Iene"
-          countryImge.src = "./assets/iene e yuan.png"             
+          countryImge.src = "./assets/iene e yuan.png"
+          unidadeSelecionada.innerHTML = "¥"              
      }
 
-     if(countryConvert.value == "CHF" ){
+     if(countryConvert.value == "Franco" ){
           coinName.innerHTML = "Franco Suiço"
-          countryImge.src = "./assets/francosuiço.jpg"            
+          countryImge.src = "./assets/francosuiço.jpg"
+          unidadeSelecionada.innerHTML = "₣"
+                      
      }
 }
 
@@ -68,6 +74,8 @@ function convertValues(){
      
      currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR",{
           style: "currency", currency: "BRL"}).format(inputCurrencyValue)
+
+          
                 
 }
 
@@ -78,6 +86,7 @@ function convertValues(){
           if (worldCurrencies.value == "dolar"){
                currencyName.innerHTML = "Dólar americano"
                currencyImage.src = "./assets/dolar.png"
+               
 
          }
 

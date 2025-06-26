@@ -21,11 +21,11 @@
         <label>
             converter <b>de</b>
 
-            <select class="country-convert">
-                <option value="BRL">R$ Real Brasileiro</option>
-                <option value="ARS">$ Peso Argentino</option>
-                <option value="JPY">¥ Iene</option>
-                <option value="CHF">¥ Franco Suiço</option>
+            <select class="country-convert" id="unidade">
+                <option value="Real">R$ Real Brasileiro</option>
+                <option value="Peso">$ Peso Argentino</option>
+                <option value="Iene">¥ Iene</option>
+                <option value="Franco">₣ Franco Suiço</option>
             </select>
         </label>
     
@@ -44,13 +44,13 @@
             Valor
             <input class="input-currency" placeholder="Digite aqui">
 
-            <button class="convert-button">Converter</button>
+            <button class="convert-button" id="convert-country">Converter</button>
 
             <section>
                 <div class="currency-box">
                     <img class="country-img" src= "./assets/brasil 2.png">
                     <p class="currency" id="coin-name">Real</p>
-                    <p class="currency-value-to-convert">R$ 0,00</p>
+                    <p class="currency-value-to-convert" id="new-country">R$ 0,00</p>
                 </div>
                 
                     <img class="arrow-img" src="./assets/Vector.png">
